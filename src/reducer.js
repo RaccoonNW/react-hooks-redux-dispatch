@@ -1,3 +1,5 @@
+
+
 function changeState(state, action) {
   switch (action.type) {
     case "counter/increment":
@@ -7,7 +9,17 @@ function changeState(state, action) {
   }
 }
 
+function render() {
+  const app = document.querySelector("#app")
+  app.textContent = state.count
+}
+
+function dispatch(action) {
+  return state = changeState(state, action)
+  render()
+}
+
 let state = { count: 0 };
 let action = { type: "counter/increment" };
 
-changeState(state, action);
+dispatch({ type: "counter/increment" });
